@@ -1,0 +1,60 @@
+first of all you have to install iniparser through npm install iniparser@latest -g for globaly install or you can install it with --save for you project in 
+dependencies or you can install it with --save-dev command for you project and in dev-dependencies in your package.json file.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+the second thing you have to do, you should create a file and named : config.ini
+content of this file is :
+	title = MehdiFilban
+	port  = 5000
+	message = anything you want
+and then create file index.pug because jade is deprecated
+content of this file : 
+  doctype
+  html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="/stylesheets/style.css")
+        script(src="/javascripts/main.js")
+        script(src="/views/error.ejs")
+    body
+       #center
+        p  Hello Guys my name is mehdi prg and im really appreciate that you come to my website.
+          #content
+            img(src="/images/logo.png", alt="logo") 
+            p welcome
+            p #{message}
+            
+and then you have to create a file and named it app.js
+content of this file is : 
+var express = require('express');
+var app = express();
+var port = 3521;
+var http = require('http');
+// var logger = require('logger');
+var iniparser = require('iniparser');
+var responseTime = require('response-time');
+var config = iniparser.parseSync("./config.ini");
+var title = config.title;
+app.set('view engine', 'pug'); //jade is deprecated
+app.set('views', "./views");
+
+app.use(express.static('./public'));
+app.use(responseTime());
+app.get('/', function(req,res){
+    res.render('hello',{title, message:config.message});
+});
+
+http.createServer(app).listen(config.port,function(){
+    console.log("app is started");
+});
+
+and then go to the terminal and write this command : 
+	~$ node-dev app.js
+
+that was so easy I hope you like it
+
+contact me : 
+	instagram : https://www.instagram.com/?hl=en
+	twitter   : https://twitter.com/Mehdi_PRG
+	email	  : mehdifilban@gmail.com
