@@ -1,13 +1,13 @@
 # node-config.ini
 
 
-ini parser is a node module that you can use it on your express app and you node apps.
+ini parser is a node module that you can use it on your express app and your node apps.
 ### [so you can learn more about iniparser here](https://www.npmjs.com/package/iniparser)
 
 but now please concider my example:
 first of all you have to install iniparser through npm install iniparser@latest -g for globaly install or you can install
-it with --save for you project in dependencies or you can install it with --save-dev command for you project and
-in dev-dependencies in your package.json file. the second thing you have to do, you should create a file and named : config.ini content of this file is :
+it with --save for your project in dependencies or you can install it with --save-dev command for your project and
+in dev-dependencies in your package.json file. the second thing you have to do, you should create a file and named : config.ini and content of this file is :
 
 <pre class="w3-black w3-text-white">
         title = MehdiFilban
