@@ -16,7 +16,7 @@ in dev-dependencies in your package.json file. the second thing you have to do, 
 </pre>
 
 and then create file index.pug because jade is deprecated content of this file :
-        <pre class="w3-black w3-text-white"> 
+   <pre class="w3-black w3-text-white"> 
     doctype
       html(lang="en")
         head
